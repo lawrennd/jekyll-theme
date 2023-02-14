@@ -1,5 +1,7 @@
 # Proceedings
 
+2023-02-14: Copied from lawrennd/proceedings.
+
 *Proceedings* is a theme for producing conference proceedings under Jekyll. It is based on the Jekyll Minima theme. 
 
 
