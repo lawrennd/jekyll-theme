@@ -1,15 +1,15 @@
-{%- if site.slidesdir -%}
-{% assign slidesdir=site.slidesdir %}
+{%- if site.slides.dir -%}
+{% assign slidesdir=site.slides.dir %}
 {%-else-%}
 {% assign slidesdir='slides' %}
 {%-endif-%}
-{%- if site.slidesurl -%}
-{% assign slidesurl=site.slidesurl %}
+{%- if site.slides.url -%}
+{% assign slidesurl=site.slides.url %}
 {%-else-%}
 {% assign slidesurl='https://inverseprobability.com' %}
 {%-endif-%}
-{%- if site.notesdir -%}
-{% assign notesdir=site.notesdir %}
+{%- if site.notes.dir -%}
+{% assign notesdir=site.notes.dir %}
 {%-else-%}
 {% assign notesdir='notes' %}
 {%-endif-%}
