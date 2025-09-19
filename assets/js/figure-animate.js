@@ -7,7 +7,15 @@ function setDivs(group) {
 }
 
 function plusDivs(n, group) {  
-  showDivs(slideIndex += n, group);
+  var x = document.getElementsByClassName(group);
+  var totalFrames = x.length;
+  
+  slideIndex += n;
+  
+  // Handle wrapping using modulo arithmetic
+  slideIndex = ((slideIndex - 1) % totalFrames + totalFrames) % totalFrames + 1;
+  
+  showDivs(slideIndex, group);
   document.getElementById("range-".concat(group)).value = slideIndex
 }
 
