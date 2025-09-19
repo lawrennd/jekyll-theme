@@ -1,3 +1,5 @@
+var slideIndex = 1;
+
 function setDivs(group) {
   var frame = document.getElementById("range-".concat(group)).value
   slideIndex = parseInt(frame)
@@ -6,7 +8,7 @@ function setDivs(group) {
 
 function plusDivs(n, group) {  
   showDivs(slideIndex += n, group);
-  document.setElementById("range-".concat(group)) = slideIndex
+  document.getElementById("range-".concat(group)).value = slideIndex
 }
 
 function showDivs(n,group) {
