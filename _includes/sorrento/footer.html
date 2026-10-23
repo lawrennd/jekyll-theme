@@ -16,8 +16,9 @@
   <!-- Social media and contact information -->
   <div class="footer-right">
 
-    {% if site.contact_email %}
-    <a href="mailto:{{ site.contact_email }}"><i class="icon-envelope"></i>&nbsp;Contact Mail</a><br/>
+    {% assign contact_email = site.contact_email | default: site.author.email %}
+    {% if contact_email %}
+    <a href="mailto:{{ contact_email }}"><i class="icon-envelope"></i>&nbsp;Contact Mail</a><br/>
     {% endif %}
 
     {% if site.github_username %}

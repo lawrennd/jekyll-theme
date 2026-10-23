@@ -24,6 +24,8 @@
 {%-endif-%}
 {%-if person.institute-%}
 ,&nbsp;{{ person.institute }}
+{%-elsif person.affiliation-%}
+,&nbsp;{{ person.affiliation }}
 {%-endif-%}
 {%-endif-%}
 {%-unless forloop.last-%}
