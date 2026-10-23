@@ -1,0 +1,13 @@
+{%- comment -%}
+Resolve the git branch for giki / GitHub edit links.
+Set `ghub.branch` in _config.yml (e.g. `main`) to override the fallback.
+{%- endcomment -%}
+{%- if site.ghub.branch -%}
+  {%- assign ghub_branch = site.ghub.branch -%}
+{%- elsif site.ghub.repository contains 'github.io' -%}
+  {%- assign ghub_branch = 'main' -%}
+{%- elsif site.ghub.repository == 'proceedings' -%}
+  {%- assign ghub_branch = 'master' -%}
+{%- else -%}
+  {%- assign ghub_branch = 'gh-pages' -%}
+{%- endif -%}

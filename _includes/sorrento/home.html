@@ -7,7 +7,8 @@
   <article>
 
 {% if site.ghub.edit %}
-{% capture url %}https://github.com/{{ site.github_username }}/{% if site.ghub.repository %}{{ site.ghub.repository }}{% else %}{{ site.baseurl }}{% endif %}/edit/{% if site.ghub.repository contains 'github.io' %}master{% else %}gh-pages{% endif %}/_config.yml{% endcapture %}
+{% include ghub_branch.html %}
+{% capture url %}https://github.com/{{ site.github_username }}/{% if site.ghub.repository %}{{ site.ghub.repository }}{% else %}{{ site.baseurl }}{% endif %}/edit/{{ ghub_branch }}/_config.yml{% endcapture %}
 <p align="right">[<a href="{{ url }}" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', '{{ url }}', 13);">edit</a>]</p>
 {% endif %}
 
@@ -19,7 +20,7 @@
 
 <p>
    <br>
-   We use a three-day format with two days of workshops and one day of plenary talks in the middle. The workshops feature research topics of current interest, and workshop participants are nominated by the workshop organizers.</p>
+   {% if site.conference.format %}{{ site.conference.format }}{% else %}We use a three-day format with two days of workshops and one day of plenary talks in the middle. The workshops feature research topics of current interest, and workshop participants are nominated by the workshop organisers.{% endif %}</p>
 
 
 {% if site.conference.sponsors %}
