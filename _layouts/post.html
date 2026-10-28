@@ -35,7 +35,9 @@ layout: page
     {{ content }}
   </div>
 
-  {%- if site.disqus.shortname -%}
+  {%- if site.giscus.repo -%}
+    {%- include giscus_comments.html -%}
+  {%- elsif site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
